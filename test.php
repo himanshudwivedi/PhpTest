@@ -11,6 +11,7 @@
 <h1>Test</h1>
 <?php 
 echo 'This is PHP Code';
+echo 'Hello world';
 ?>
 </body>
 </html>
