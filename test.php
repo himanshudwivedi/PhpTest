@@ -14,8 +14,6 @@
 
 <?php 
 echo 'This is PHP Code';
-echo 'php test code';
-echo 'php testing code';
 ?>
 </body>
 </html>
