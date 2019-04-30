@@ -1,17 +1,5 @@
-<?php ini_set('max_execution_time', 3000); ?>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Test file</title>
-<style>
-</style>
-</head>
-<body>
-<h1>Test</h1>
-<?php 
+<?php
+ini_set('max_execution_time', 3000);
 echo 'This is PHP Code';
 echo 'Hello world';
 ?>
-</body>
-</html>
