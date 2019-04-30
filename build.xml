@@ -2,13 +2,13 @@
 <project name="php-automate-build-ant" default="full-build">
 
     <!-- By default the tools are managed by Composer in ${basedir}/vendor/bin -->
-    <property name="phpcpd" value="${basedir}/vendor/bin/phpcpd"/>
-    <property name="phpcs" value="${basedir}/vendor/bin/phpcs"/>
-    <property name="phpmd" value="${basedir}/vendor/bin/phpmd"/>
-    <property name="phpunit" value="${basedir}/vendor/bin/phpunit"/>
+    <!-- <property name="phpcpd" value="${basedir}/vendor/bin/phpcpd"/> -->
+    <!-- <property name="phpcs" value="${basedir}/vendor/bin/phpcs"/> -->
+    <!-- <property name="phpmd" value="${basedir}/vendor/bin/phpmd"/> -->
+    <!-- <property name="phpunit" value="${basedir}/vendor/bin/phpunit"/> -->
 
     <!-- Use this when all tools are on the $PATH -->
-    <!--
+    
     <property name="pdepend" value="pdepend"/>
     <property name="phpcpd" value="phpcpd"/>
     <property name="phpcs" value="phpcs"/>
@@ -16,7 +16,7 @@
     <property name="phploc" value="phploc"/>
     <property name="phpmd" value="phpmd"/>
     <property name="phpunit" value="phpunit"/>
-    -->
+   
 
     <!-- Use this when the tools are located as PHARs in ${basedir}/build/tools -->
     <!--
@@ -38,17 +38,7 @@
         <property name="clean.done" value="true"/>
     </target>
 
-    <target name="composer" description="Install composer packages including require-dev.">
-        <get src="https://getcomposer.org/download/1.2.1/composer.phar" dest="composer.phar"/>
-        <exec executable="php" failonerror="true">
-            <arg value="${basedir}/composer.phar"/>
-            <arg value="install"/>
-            <arg value="--prefer-dist"/>
-            <arg value="--no-progress"/>
-        </exec>
-    </target>
-
-    <target name="full-build" depends="prepare,composer,static-analysis,phpunit,-check-failure"
+     <target name="full-build" depends="prepare,static-analysis,phpunit,-check-failure"
             description="Perform static analysis, run tests, and generate project documentation.">
         <echo message="Built"/>
     </target>
@@ -163,12 +153,12 @@
         <property name="prepare.done" value="true"/>
     </target>
 
-    <target name="quick-build" depends="prepare,composer,lint,phpunit-no-coverage"
+    <target name="quick-build" depends="prepare,lint,phpunit-no-coverage"
             description="Perform lint check and run tests without generating code coverage reports.">
         <echo message="Built"/>
     </target>
 
-    <target name="static-analysis" depends="composer,lint,phpmd-ci,phpcs-ci,phpcpd-ci"
+    <target name="static-analysis" depends="lint,phpmd-ci,phpcs-ci,phpcpd-ci"
             description="Perform static analysis.">
         <echo message="Done"/>
     </target>
