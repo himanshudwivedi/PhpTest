@@ -1,19 +1,20 @@
 <?php 
-ini_set('max_execution_time', 3000);
- ?>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Test file</title>
-<style>
-</style>
-</head>
-<body>
-<h1>Test</h1>
-<?php 
-echo 'This is PHP Code';
-echo 'This is for testing purposes';
-?>
-</body>
-</html>
+$x = "Sandeep"; 
+y = "Rout"; 
+echo $x; 
+echo $y; 
+function add($a, $b) 
+{ 
+    $sum = $a + $b; 
+    echo "sum = " . $sum; 
+} 
+$a = 0; 
+$b = 20; 
+add($x, $y); 
+  
+diff($x, $y); 
+include ("a.php"); 
+echo $c;
+echo 'hi'
+?> 
+?> 
