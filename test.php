@@ -15,6 +15,6 @@ add($x, $y);
 diff($x, $y); 
 include ("a.php"); 
 echo $c;
-echo 'hi';
+echo 'hi'
 ?> 
 ?> 
